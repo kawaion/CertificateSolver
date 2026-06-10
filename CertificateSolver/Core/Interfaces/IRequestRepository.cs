@@ -1,7 +1,7 @@
 ﻿using CertificateSolver.Models;
 //using System.Security.Cryptography.X509Certificates;
 
-namespace CertificateSolver.Services
+namespace CertificateSolver.Core.Interfaces
 {
     public interface IRequestRepository
     {

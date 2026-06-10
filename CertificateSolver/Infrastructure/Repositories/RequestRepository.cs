@@ -1,7 +1,8 @@
-﻿using CertificateSolver.Models;
+﻿using CertificateSolver.Core.Interfaces;
+using CertificateSolver.Models;
 using System.Collections.Concurrent;
 
-namespace CertificateSolver.Services
+namespace CertificateSolver.Infrastructure.Repositories
 {
     public class RequestRepository : IRequestRepository
     {
