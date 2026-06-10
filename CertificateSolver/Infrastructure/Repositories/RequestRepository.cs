@@ -11,13 +11,13 @@ namespace CertificateSolver.Infrastructure.Repositories
 
         public Task<IEnumerable<CertificateRequest>> GetAllForAccountantAsync()
         {
-            var result = _storage.Values.Where(r => r.Status != RequestStatus.Draft);
+            var result = _storage.Values.Where(r => r.Status != RequestStatus.Draft).OrderByDescending(r => r.CreatedAt).ToList().AsEnumerable();
             return Task.FromResult(result);
         }
 
         public Task<IEnumerable<CertificateRequest>> GetByEmployeeAsync(string employeeId)
         {
-            var result = _storage.Values.Where(r => r.EmployeeId == employeeId);
+            var result = _storage.Values.Where(r => r.EmployeeId == employeeId).OrderBy(r => r.CreatedAt).ToList().AsEnumerable();
             return Task.FromResult(result);
         }
 
@@ -29,7 +29,7 @@ namespace CertificateSolver.Infrastructure.Repositories
 
         public Task<IEnumerable<CertificateRequest>> GetByStatusAsync(RequestStatus status)
         {
-            var result = _storage.Values.Where(r => r.Status == status);
+            var result = _storage.Values.Where(r => r.Status == status).OrderBy(r => r.CreatedAt).ToList().AsEnumerable();
             return Task.FromResult(result);
         }
         public Task AddAsync(CertificateRequest request)
