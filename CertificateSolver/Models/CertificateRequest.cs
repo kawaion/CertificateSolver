@@ -9,5 +9,7 @@
         public string Reason { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime LastUpdatedAt { get; set; }
+        public RequestStatus Status { get; set; }
+        public string? RejectionReason {  get; set; }
     }
 }
