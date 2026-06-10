@@ -11,7 +11,9 @@ namespace CertificateSolver.Core.Interfaces
             string reason,
             string role);
 
-        Task<IEnumerable<CertificateRequest>> GetEmploypeeRequestsAsync(string employeeId);
+        Task<IEnumerable<CertificateRequest>> GetEmployeeRequestsAsync(string employeeId);
+
+        Task<IEnumerable<CertificateRequest>> GetAllRequestsForAccountantAsync();
 
         Task<CertificateRequest> UpdateStatusAsync(
             Guid requestId,

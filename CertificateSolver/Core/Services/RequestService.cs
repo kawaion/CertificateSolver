@@ -58,12 +58,15 @@ namespace CertificateSolver.Core.Services
 
             return request.Id;
         }
-        public async Task<IEnumerable<CertificateRequest>> GetEmploypeeRequestsAsync(string employeeId)
+        public async Task<IEnumerable<CertificateRequest>> GetEmployeeRequestsAsync(string employeeId)
         {
             return await _repository.GetByEmployeeAsync(employeeId);
         }
 
-
+        public async Task<IEnumerable<CertificateRequest>> GetAllRequestsForAccountantAsync()
+        {
+            return await _repository.GetAllForAccountantAsync();
+        }
 
         public async Task<CertificateRequest> UpdateStatusAsync(Guid requestId, RequestStatus newStatus, string role, string rejectionReason = null)
         {
@@ -88,5 +91,7 @@ namespace CertificateSolver.Core.Services
             await _repository.UpdateAsync(request);
             return request;
         }
+
+
     }
 }

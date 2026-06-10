@@ -1,15 +1,16 @@
-namespace CertificateSolver
+using CertificateSolver.Core.Interfaces;
+using CertificateSolver.Core.Rules;
+using CertificateSolver.Core.Services;
+using CertificateSolver.Infrastructure.Repositories;
+using CertificateSolver.Infrastructure.Storage;
+
+namespace CertificateSolver 
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-            var app = builder.Build();
 
-            app.MapGet("/", () => "Hello World!");
-
-            app.Run();
         }
     }
 }
